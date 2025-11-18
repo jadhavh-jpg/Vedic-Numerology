@@ -5,10 +5,9 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>3 DAYS Master Class on Vedic Numerology — Kasturi Divine</title>
 
-  <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-  <!-- OPTIONAL: GA4 snippet (paste your Measurement ID below) -->
+  <!-- Optional GA4 (paste your Measurement ID if you want) -->
   <!--
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
   <script>
@@ -29,386 +28,322 @@
       --muted: #6b6b6b;
       --card: #ffffff;
       --shadow: 0 10px 30px rgba(16,24,32,0.08);
+      --max-width: 1100px;
     }
     *{box-sizing:border-box;font-family:'Poppins',system-ui,Arial;margin:0;padding:0}
-    body{background: linear-gradient(180deg, var(--bg1) 0%, #fffdf9 100%); color:#10221f; line-height:1.45}
-    .container{max-width:1100px;margin:34px auto;padding:28px;position:relative}
-    .topbar{display:flex;align-items:center;gap:18px;position:relative}
-    .logo{height:72px;width:72px;border-radius:12px;overflow:hidden;box-shadow:var(--shadow);background:#fff;display:flex;align-items:center;justify-content:center}
-    .hero{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;margin-top:18px}
-    .kicker{display:inline-block;padding:8px 12px;background:linear-gradient(90deg,var(--gold1),var(--gold2));border-radius:999px;color:#083a33;font-weight:700;font-size:13px}
-    h1{font-size:34px;color:var(--accent);margin-top:8px}
-    .tag{color:#143a35;font-weight:600;margin-top:6px}
-    .sub{color:var(--muted);margin-top:12px}
-    .join-row{display:flex;gap:12px;margin-top:20px;flex-wrap:wrap}
-    .btn{display:inline-flex;gap:10px;align-items:center;padding:14px 18px;border-radius:12px;font-weight:700;text-decoration:none;box-shadow:var(--shadow);cursor:pointer;border:0}
-    .btn-primary{background:linear-gradient(90deg,var(--accent),#0c3f39);color:#fff;position:relative;overflow:hidden}
+    body{background: linear-gradient(180deg, var(--bg1) 0%, #fffdf9 100%); color:#10221f; line-height:1.45;-webkit-font-smoothing:antialiased}
+    .wrap{max-width:var(--max-width);margin:28px auto;padding:20px}
+    .topbar{display:flex;gap:18px;align-items:center;flex-wrap:wrap}
+    .logo{height:64px;width:64px;border-radius:12px;overflow:hidden;box-shadow:var(--shadow);background:#fff;display:flex;align-items:center;justify-content:center}
+    .kicker{display:inline-block;padding:8px 12px;background:linear-gradient(90deg,var(--gold1),var(--gold2));border-radius:999px;color:#072a20;font-weight:700;font-size:13px}
+    h1{font-size:28px;color:var(--accent);margin:6px 0}
+    .subtitle{color:#143a35;font-weight:600;margin-bottom:8px}
+    .meta{color:var(--muted);font-size:14px}
+
+    /* hero grid */
+    .hero{display:grid;grid-template-columns:1fr 380px;gap:24px;margin-top:18px;align-items:start}
+    .left-col{display:flex;flex-direction:column;gap:18px}
+    .card{background:var(--card);padding:16px;border-radius:14px;box-shadow:var(--shadow)}
+    .video-frame{width:100%;height:320px;border-radius:10px;overflow:hidden;background:#000}
+    .join-row{display:flex;gap:12px;margin-top:12px;flex-wrap:wrap}
+
+    /* form */
+    form{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    input, select{padding:12px;border-radius:10px;border:1px solid #eee;background:rgba(12,60,52,0.03)}
+    .form-actions{display:flex;gap:10px;align-items:center}
+    .btn{display:inline-flex;gap:10px;align-items:center;padding:12px 14px;border-radius:10px;font-weight:700;text-decoration:none;cursor:pointer;border:0}
+    .btn-primary{background:linear-gradient(90deg,var(--accent),#0c3f39);color:#fff;box-shadow:var(--shadow)}
     .btn-ghost{background:transparent;border:2px solid rgba(15,89,77,0.08);color:var(--accent)}
-    .btn-cinematic { background: linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.02)); color: #083a33; padding:14px 22px; border-radius:14px; font-weight:800; border: 2px solid transparent; box-shadow: 0 12px 30px rgba(0,0,0,0.12); position:relative; z-index:1; overflow:hidden; }
-    .btn-cinematic::before{ content:""; position:absolute;left:-120%;top:0;height:100%;width:120%; background: linear-gradient(90deg, rgba(212,163,74,0.05), rgba(255,212,122,0.25), rgba(212,163,74,0.05)); transform: skewX(-20deg); transition: all 0.9s ease-in-out; z-index:0;}
-    .btn-cinematic.sweep::before{left:120%;}
-    .btn-cinematic.blink { animation: btnPulse 1.6s ease-in-out infinite; }
-    @keyframes btnPulse {0% { transform: translateY(0) scale(1); filter:brightness(1) } 50% { transform: translateY(-4px) scale(1.02); filter:brightness(1.06) } 100% { transform: translateY(0) scale(1); filter:brightness(1) } }
+    .btn-join{background:#25D366;color:#fff;border-radius:10px;padding:12px 16px;font-weight:700}
 
-    .countdown-wrap{display:flex;gap:10px;align-items:center;margin-top:12px}
-    .countdown{display:inline-flex;gap:8px;background:linear-gradient(180deg,#fff,#fffef7);padding:8px;border-radius:10px;box-shadow:var(--shadow);align-items:center}
-    .countdown .unit{min-width:64px;text-align:center;padding:10px 12px;border-radius:8px;background:linear-gradient(180deg,#fff,#fff);border:1px solid rgba(16,24,32,0.03)}
-    .unit .num{font-size:20px;font-weight:800;color:var(--accent)}
-    .unit .lbl{font-size:12px;color:var(--muted);margin-top:4px}
-
-    .video-card{background:var(--card);padding:12px;border-radius:14px;box-shadow:var(--shadow)}
-    .video-frame{width:100%;height:260px;border-radius:8px;overflow:hidden;background:#000}
-    .mentors{background:linear-gradient(180deg,#fff,#fbf8f5);padding:16px;border-radius:14px;box-shadow:var(--shadow);display:flex;gap:12px;flex-direction:column}
-    .mentor-list{display:flex;gap:12px;align-items:center}
+    /* mentors */
+    .mentors{display:flex;flex-direction:column;gap:12px}
     .mentor{display:flex;gap:12px;align-items:center}
-    .mentor img{width:120px;height:120px;object-fit:cover;border-radius:999px;border:6px solid #efe2cf}
-    .mentor .m-info{max-width:360px}
-    .m-info h4{margin-bottom:6px;color:#0d473f}
-    .m-info p{color:var(--muted);font-size:14px}
-    .why{margin-top:18px;display:grid;grid-template-columns:1fr 1fr;gap:12px}
-    .card{background:var(--card);padding:16px;border-radius:12px;box-shadow:var(--shadow)}
-    .tick{color:var(--accent);font-weight:700;margin-right:8px}
-    .testimonials{display:flex;gap:12px;margin-top:12px;flex-wrap:wrap}
-    .tcard{padding:14px;border-radius:10px;background:linear-gradient(180deg,#fff,#fff);box-shadow:var(--shadow);flex:1;min-width:220px}
-    .contact{display:flex;gap:8px;align-items:center;margin-top:18px}
-    .contact a{display:inline-flex;align-items:center;gap:8px;padding:10px 12px;border-radius:10px;text-decoration:none;color:var(--accent);border:1px solid rgba(15,89,77,0.06);background:#fff}
-    footer{margin-top:30px;padding:18px 6px;color:var(--muted);font-size:14px;text-align:center}
+    .mentor img{width:98px;height:98px;object-fit:cover;border-radius:999px;border:5px solid #efe2cf}
+    .mentor h4{margin:0;color:#0d473f}
+    .mentor p{margin:4px 0 0;color:var(--muted);font-size:13px}
 
-    .date-chip{ position:absolute;right:24px;top:18px;background:linear-gradient(90deg,var(--gold1),var(--gold2)); color:#072a20;padding:10px 14px;border-radius:999px;font-weight:800;box-shadow:0 8px 26px rgba(212,163,74,0.18);cursor:pointer;display:flex;align-items:center;gap:8px;z-index:50; transform-origin:center; }
-    .date-chip .ping{width:10px;height:10px;border-radius:999px;background:#fff;box-shadow:0 0 18px rgba(255,215,120,0.8);animation: ping 1.8s infinite;}
+    /* two-column why/learn */
+    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .list{list-style:none;padding:0;margin:0;color:var(--muted);line-height:1.6}
+    .list li{padding-left:18px;position:relative}
+    .list li::before{content:"✔";position:absolute;left:0;color:var(--accent);font-weight:800}
+
+    /* testimonials */
+    .testimonials{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:12px}
+    .tcard{padding:14px;border-radius:10px;background:linear-gradient(180deg,#fff,#fffef9);box-shadow:var(--shadow)}
+
+    /* utility */
+    .section-title{display:flex;align-items:center;gap:12px}
+    .section-title h3{margin:0;color:var(--accent)}
+
+    /* date-chip */
+    .date-chip{position:fixed;right:18px;top:18px;background:linear-gradient(90deg,var(--gold1),var(--gold2));color:#072a20;padding:10px 12px;border-radius:999px;font-weight:800;box-shadow:0 8px 26px rgba(212,163,74,0.18);cursor:pointer;display:flex;align-items:center;gap:8px;z-index:999}
+    .date-chip .ping{width:10px;height:10px;border-radius:999px;background:#fff;box-shadow:0 0 18px rgba(255,215,120,0.8);animation: ping 1.8s infinite}
     @keyframes ping {0%{transform:scale(.9);opacity:1}50%{transform:scale(1.25);opacity:.7}100%{transform:scale(.9);opacity:1}}
 
-    @media (max-width:980px){.hero{grid-template-columns:1fr;}.video-frame{height:200px}.mentor img{width:96px;height:96px}.date-chip{right:12px;top:12px}}
-    @media (max-width:520px){.why{grid-template-columns:1fr}.kicker{display:none}.logo{height:56px;width:56px}}
+    footer{margin-top:28px;padding:12px;color:var(--muted);text-align:center;font-size:13px}
+
+    /* responsive adjustments */
+    @media (max-width:980px){
+      .hero{grid-template-columns:1fr;gap:16px}
+      .video-frame{height:220px}
+      .testimonials{grid-template-columns:repeat(2,1fr)}
+      form{grid-template-columns:1fr}
+      .form-actions{flex-direction:column-reverse}
+      .mentor img{width:84px;height:84px}
+      .date-chip{right:12px;top:12px}
+    }
+    @media (max-width:520px){
+      .testimonials{grid-template-columns:1fr}
+      h1{font-size:22px}
+      .logo{height:52px;width:52px}
+      .video-frame{height:180px}
+      .section-title{padding:0 6px}
+      .wrap{padding:12px}
+    }
   </style>
 </head>
 <body>
-  <div class="container">
+  <div class="wrap">
+    <!-- fixed date chip -->
     <div class="date-chip" id="dateChip" title="Click to jump to JOIN">
       <div class="ping"></div>
-      <div style="font-size:14px">25 Nov</div>
+      <div>25 Nov</div>
     </div>
 
+    <!-- header -->
     <div class="topbar">
-      <div class="logo"><img src="assets/logo.png" alt="Kasturi Divine Logo" style="height:100%;width:100%;object-fit:contain"></div>
+      <div class="logo"><img src="assets/logo.png" alt="Kasturi Divine" style="height:100%;width:100%;object-fit:contain"></div>
       <div>
         <div class="kicker">LIVE FREE WEBINAR</div>
         <h1>3 DAYS Master Class on Vedic Numerology</h1>
-        <div class="tag">From Basic to Professional — Learn the Science of Numbers</div>
-        <div class="sub">25 Nov • Start at 8:00 PM • Limited Seats</div>
-
-        <div class="countdown-wrap" style="margin-top:10px">
-          <div class="countdown" aria-hidden="false">
-            <div class="unit"><div class="num" id="cd-days">--</div><div class="lbl">Days</div></div>
-            <div class="unit"><div class="num" id="cd-hours">--</div><div class="lbl">Hours</div></div>
-            <div class="unit"><div class="num" id="cd-mins">--</div><div class="lbl">Minutes</div></div>
-            <div class="unit"><div class="num" id="cd-secs">--</div><div class="lbl">Seconds</div></div>
-          </div>
-          <div style="margin-left:12px;color:var(--muted);font-weight:600">Until Webinar Starts</div>
-        </div>
+        <div class="subtitle">From Basic to Professional — Learn the Science of Numbers</div>
+        <div class="meta">25 Nov • Start at 8:00 PM • Limited Seats</div>
       </div>
     </div>
 
-    <div class="hero" style="margin-top:18px">
-      <div>
-        <div class="video-card">
-          <div style="display:flex;justify-content:space-between;align-items:center;">
-            <strong style="font-size:16px;color:var(--accent)">Intro Video</strong>
-            <span style="font-size:13px;color:var(--muted)">Watch to know what's inside</span>
+    <!-- hero -->
+    <div class="hero" id="topHero">
+      <div class="left-col">
+        <!-- intro video -->
+        <div class="card">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+            <div><strong style="color:var(--accent)">Intro Video</strong><div style="font-size:13px;color:var(--muted)">Watch to know what's inside</div></div>
+            <div style="text-align:right">
+              <div style="font-size:13px;color:var(--muted)">Countdown</div>
+              <div style="margin-top:6px;display:flex;gap:8px;justify-content:flex-end;align-items:center">
+                <div style="background:#fff;padding:6px 8px;border-radius:8px;box-shadow:var(--shadow);font-weight:800;color:var(--accent)" id="cd-days">--d</div>
+                <div style="background:#fff;padding:6px 8px;border-radius:8px;box-shadow:var(--shadow);font-weight:800;color:var(--accent)" id="cd-hours">--h</div>
+                <div style="background:#fff;padding:6px 8px;border-radius:8px;box-shadow:var(--shadow);font-weight:800;color:var(--accent)" id="cd-mins">--m</div>
+              </div>
+            </div>
           </div>
-          <div class="video-frame" style="margin-top:12px">
-            <!-- Youtube embed (provided by user) -->
+
+          <div class="video-frame">
             <iframe width="100%" height="100%" src="https://www.youtube.com/embed/zWIsZuF-nLo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
           </div>
 
           <p style="margin-top:12px;color:var(--muted)">A step-by-step roadmap from beginner to professional numerologist. Name correction, personal year, lucky numbers, remedies and practical tools for success.</p>
 
-          <div class="join-row" id="joinSection" style="margin-top:18px">
-            <a class="btn btn-cinematic blink sweep" id="joinWhatsapp" href="https://wa.me/919205681456" target="_blank" rel="noopener" aria-label="Join WhatsApp Group">
-              JOIN WHATSAPP GROUP
-            </a>
-
-            <a class="btn btn-primary" id="enrollBtn" href="https://kd1-eight.vercel.app/" target="_blank" rel="noopener" aria-label="Enroll and Pay">
-              ENROLL / PAYMENT
-            </a>
-
-            <a class="btn btn-cinematic blink" id="joinNowBtn" href="https://wa.me/919205681456" target="_blank" rel="noopener" style="margin-left:auto;">
-              ✨ JOIN NOW — FREE ✨
-            </a>
+          <div class="join-row" id="joinSection">
+            <a class="btn btn-primary" id="joinNowBtn" href="https://wa.me/919205681456" target="_blank" rel="noopener">✨ JOIN NOW — FREE ✨</a>
+            <a class="btn btn-join" id="joinWhatsapp" href="https://wa.me/919205681456" target="_blank" rel="noopener">Join WhatsApp</a>
+            <a class="btn btn-ghost" id="enrollBtn" href="https://kd1-eight.vercel.app/" target="_blank" rel="noopener">Pay & Book</a>
           </div>
         </div>
 
-        <!-- REGISTRATION FORM -->
-        <div id="leadFormCard" class="card" style="margin-top:18px;">
-          <h3 style="color:var(--accent)">Register for FREE Masterclass</h3>
-          <p style="color:var(--muted);margin-bottom:12px;">Secure your seat — enter details below. We will message you WhatsApp reminders.</p>
+        <!-- registration form -->
+        <div class="card" id="leadFormCard">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+            <div class="section-title"><h3>Register for FREE Masterclass</h3></div>
+            <div style="color:var(--muted);font-size:13px">Secure your seat — WhatsApp reminders</div>
+          </div>
 
-          <form id="leadForm" autocomplete="on" style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
-            <input type="text" id="lf-name" name="name" placeholder="Full name *" required style="padding:12px;border-radius:8px;border:1px solid #eee">
-            <input type="email" id="lf-email" name="email" placeholder="Email *" required style="padding:12px;border-radius:8px;border:1px solid #eee">
-            <input type="tel" id="lf-phone" name="phone" placeholder="Mobile (e.g. 91XXXXXXXXXX) *" pattern="[0-9]{10,13}" required style="padding:12px;border-radius:8px;border:1px solid #eee">
-            <select id="lf-source" name="source" style="padding:12px;border-radius:8px;border:1px solid #eee">
+          <form id="leadForm" autocomplete="on">
+            <input type="text" id="lf-name" name="name" placeholder="Full name *" required>
+            <input type="email" id="lf-email" name="email" placeholder="Email *" required>
+            <input type="tel" id="lf-phone" name="phone" placeholder="Mobile (e.g. 91XXXXXXXXXX) *" pattern="[0-9]{10,13}" required>
+            <select id="lf-source" name="source">
               <option value="Landing Page">Landing Page</option>
               <option value="Facebook">Facebook</option>
               <option value="Instagram">Instagram</option>
               <option value="Referral">Referral</option>
             </select>
 
-            <div style="grid-column:1/-1;display:flex;gap:10px;align-items:center;">
-              <button id="leadSubmit" type="submit" class="btn btn-primary" style="flex:1;padding:12px;border-radius:10px;">Reserve My Seat</button>
-              <a id="leadWa" class="btn" href="https://wa.me/919205681456" target="_blank" rel="noopener" style="background:#25D366;color:#fff;border-radius:10px;padding:12px;">Join WhatsApp</a>
+            <div class="form-actions" style="grid-column:1/-1;margin-top:6px;">
+              <button id="leadSubmit" type="submit" class="btn btn-primary" style="flex:1">Reserve My Seat</button>
+              <a id="leadWa" class="btn btn-join" href="https://wa.me/919205681456" target="_blank" rel="noopener">Join WhatsApp</a>
             </div>
 
-            <div id="leadMsg" style="grid-column:1/-1;display:none;padding:10px;border-radius:8px;margin-top:6px;"></div>
+            <div id="leadMsg" style="grid-column:1/-1;display:none;padding:10px;border-radius:8px;margin-top:10px;"></div>
           </form>
         </div>
 
-        <div class="why" style="margin-top:18px">
-          <div class="card">
-            <h3 style="color:var(--accent)">Kyon Attend Kare?</h3>
-            <ul style="margin-top:10px;color:var(--muted);line-height:1.6">
-              <li><span class="tick">✔</span> Personal birth number & name correction secrets</li>
-              <li><span class="tick">✔</span> Predictive tools for career, wealth & relationships</li>
-              <li><span class="tick">✔</span> Simple remedies & practical fixes</li>
-              <li><span class="tick">✔</span> Live Q&A with mentors + real examples</li>
-            </ul>
+        <!-- Why attend & What you'll learn -->
+        <div style="display:flex;flex-direction:column;gap:12px">
+          <div class="grid-2">
+            <div class="card">
+              <div class="section-title"><h3>Why Attend?</h3></div>
+              <ul class="list" style="margin-top:10px">
+                <li>Personal birth number & name correction secrets</li>
+                <li>Predictive tools for career, wealth & relationships</li>
+                <li>Simple remedies & practical fixes</li>
+                <li>Live Q&A with mentors + real examples</li>
+              </ul>
+            </div>
+            <div class="card">
+              <div class="section-title"><h3>What You'll Learn</h3></div>
+              <ul class="list" style="margin-top:10px">
+                <li>Date of birth blueprint</li>
+                <li>Name vibration & correction</li>
+                <li>Personal year & 9-year cycle</li>
+                <li>Practical numerology for daily life</li>
+              </ul>
+            </div>
           </div>
 
-          <div class="card">
-            <h3 style="color:var(--accent)">Aap Kya Seekhenge</h3>
-            <ul style="margin-top:10px;color:var(--muted);line-height:1.6">
-              <li><span class="tick">✔</span> Date of birth blueprint</li>
-              <li><span class="tick">✔</span> Name vibration & correction</li>
-              <li><span class="tick">✔</span> Personal year & 9-year cycle</li>
-              <li><span class="tick">✔</span> Practical numerology for daily life</li>
-            </ul>
+          <!-- Testimonials -->
+          <div>
+            <div class="section-title" style="margin-bottom:8px"><h3>Testimonials</h3></div>
+            <div class="testimonials">
+              <div class="tcard"><strong>⭐⭐⭐⭐⭐</strong><p style="margin-top:8px;color:var(--muted)">"Numerology ne mera career badal diya. Simple aur practical methods!"</p><small style="color:var(--muted)">— Student</small></div>
+              <div class="tcard"><strong>⭐⭐⭐⭐⭐</strong><p style="margin-top:8px;color:var(--muted)">"Name correction se business growth hui, bahut hi effective."</p><small style="color:var(--muted)">— Client</small></div>
+              <div class="tcard"><strong>⭐⭐⭐⭐⭐</strong><p style="margin-top:8px;color:var(--muted)">"Best teachers, simple aur powerful methods."</p><small style="color:var(--muted)">— Webinar participant</small></div>
+            </div>
           </div>
         </div>
 
-        <div style="margin-top:18px">
-          <h3 style="color:var(--accent)">Testimonials</h3>
-          <div class="testimonials">
-            <div class="tcard">
-              <strong>⭐⭐⭐⭐⭐</strong>
-              <p style="margin-top:8px;color:var(--muted)">"Numerology ne mera career badal diya. Simple aur practical methods!"</p>
-              <small style="color:var(--muted)">— Student</small>
-            </div>
-            <div class="tcard">
-              <strong>⭐⭐⭐⭐⭐</strong>
-              <p style="margin-top:8px;color:var(--muted)">"Name correction se business growth hui, bahut hi effective." </p>
-              <small style="color:var(--muted)">— Client</small>
-            </div>
-            <div class="tcard">
-              <strong>⭐⭐⭐⭐⭐</strong>
-              <p style="margin-top:8px;color:var(--muted)">"Best teachers, simple aur powerful methods." </p>
-              <small style="color:var(--muted)">— Webinar participant</small>
-            </div>
-          </div>
-        </div>
       </div>
 
-      <aside>
+      <!-- RIGHT COLUMN: Mentors, Contact -->
+      <aside class="card" style="padding:18px">
+        <div style="margin-bottom:6px" class="section-title"><h3>Meet Your Mentors</h3></div>
+
+        <!-- Dr Santoshh Jakhar (MAIN, on top) -->
         <div class="mentors">
-          <h3 style="color:var(--accent)">Meet Your Mentors</h3>
-
-          <div class="mentor-list" style="flex-direction:column;gap:12px">
-            <div class="mentor">
-              <img src="assets/mentor1.jpg" alt="Mrs Neitu Choudhary">
-              <div class="m-info">
-                <h4>Mrs. Neitu Choudhary</h4>
-                <div style="font-size:13px;color:var(--muted)">Numero & Astro Coach — Professional numerology consultant with years of experience. Practical live examples and name-correction expertise.</div>
-              </div>
-            </div>
-
-            <div class="mentor">
-              <img src="assets/mentor2.jpg" alt="Dr Santoshh Jakhar">
-              <div class="m-info">
-                <h4>Dr. Santoshh Jakhar</h4>
-                <div style="font-size:13px;color:var(--muted)">Wellness Coach — Mind-body alignment through numerology, wellness guidance and mentoring.</div>
-              </div>
+          <div class="mentor" id="mentor-dr">
+            <img src="assets/mentor2.jpg" alt="Dr Santoshh Jakhar">
+            <div>
+              <h4>Dr. Santoshh Jakhar</h4>
+              <p>Wellness Coach — Mind-body alignment through numerology, wellness guidance and mentoring. (Lead Mentor)</p>
             </div>
           </div>
 
-          <div style="margin-top:10px">
-            <strong style="color:var(--accent)">Contact / Support</strong>
-            <div class="contact" style="margin-top:8px;flex-direction:column;align-items:flex-start">
+          <!-- Mrs Neitu below -->
+          <div class="mentor" id="mentor-neitu" style="margin-top:12px">
+            <img src="assets/mentor1.jpg" alt="Mrs Neitu Choudhary">
+            <div>
+              <h4>Mrs. Neitu Choudhary</h4>
+              <p>Numero & Astro Coach — Professional numerology consultant with years of experience. Practical live examples and name-correction expertise.</p>
+            </div>
+          </div>
+
+          <div style="margin-top:12px">
+            <div style="font-weight:700;color:var(--accent);margin-bottom:6px">Contact / Support</div>
+            <div style="display:flex;flex-direction:column;gap:8px">
               <a href="tel:919205681456">📞 9205681456</a>
               <a href="tel:919736317525">📞 9736317525</a>
-
-              <div style="display:flex;gap:8px;margin-top:8px">
-                <a class="btn" style="background:#25D366;color:#fff" href="https://wa.me/919205681456" target="_blank" rel="noopener">Chat: 9205681456</a>
-                <a class="btn" style="background:#128C7E;color:#fff" href="https://wa.me/919736317525" target="_blank" rel="noopener">Chat: 9736317525</a>
-              </div>
             </div>
-          </div>
 
-          <div style="margin-top:10px">
-            <strong style="color:var(--accent)">Enroll / Payment</strong>
-            <p style="color:var(--muted);margin-top:8px">Full professional course booking link:</p>
-            <a class="btn btn-primary" href="https://kd1-eight.vercel.app/" target="_blank" rel="noopener">Pay & Book (Click here)</a>
+            <div style="display:flex;gap:8px;margin-top:10px;flex-wrap:wrap">
+              <a class="btn" style="background:#25D366;color:#fff" href="https://wa.me/919205681456" target="_blank">Chat: 9205681456</a>
+              <a class="btn" style="background:#128C7E;color:#fff" href="https://wa.me/919736317525" target="_blank">Chat: 9736317525</a>
+            </div>
+
+            <div style="margin-top:12px">
+              <div style="font-weight:700;color:var(--accent)">Enroll / Payment</div>
+              <p style="color:var(--muted);margin-top:6px">Full professional course booking link:</p>
+              <a class="btn btn-ghost" href="https://kd1-eight.vercel.app/" target="_blank">Pay & Book (Click here)</a>
+            </div>
           </div>
         </div>
       </aside>
     </div>
 
-    <footer>
-      © Kasturi Divine — All Rights Reserved • Designed for high-conversion landing page
-    </footer>
+    <footer>© Kasturi Divine — All Rights Reserved</footer>
   </div>
 
   <script>
-    // COUNTDOWN: target = 25 Nov 2025, 20:00 IST (which is 14:30 UTC)
+    // COUNTDOWN target = 25 Nov 2025, 20:00 IST
     const targetUTC = Date.UTC(2025, 10, 25, 14, 30, 0);
-    const $days = document.getElementById('cd-days');
-    const $hours = document.getElementById('cd-hours');
-    const $mins = document.getElementById('cd-mins');
-    const $secs = document.getElementById('cd-secs');
+    const elDays = document.getElementById('cd-days');
+    const elHours = document.getElementById('cd-hours');
+    const elMins = document.getElementById('cd-mins');
     const joinNowBtn = document.getElementById('joinNowBtn');
     const joinWhatsapp = document.getElementById('joinWhatsapp');
     const dateChip = document.getElementById('dateChip');
 
-    function pad(n){ return n < 10 ? '0' + n : n; }
-
+    function pad(n){ return n < 10 ? '0'+n : n; }
     function updateCountdown(){
       const now = Date.now();
       let diff = targetUTC - now;
-      if(diff <= 0){
-        $days.textContent = '00';
-        $hours.textContent = '00';
-        $mins.textContent = '00';
-        $secs.textContent = '00';
-        joinNowBtn.textContent = 'LIVE — JOIN NOW';
-        joinNowBtn.href = 'https://wa.me/919205681456';
-        joinNowBtn.classList.remove('blink');
-        joinNowBtn.style.background = 'linear-gradient(90deg, #e94545, #ff6b6b)';
-        clearInterval(cntInterval);
-        return;
-      }
-      const days = Math.floor(diff / (1000*60*60*24));
-      diff -= days * (1000*60*60*24);
-      const hours = Math.floor(diff / (1000*60*60));
-      diff -= hours * (1000*60*60);
-      const mins = Math.floor(diff / (1000*60));
-      diff -= mins * (1000*60);
-      const secs = Math.floor(diff / 1000);
-
-      $days.textContent = pad(days);
-      $hours.textContent = pad(hours);
-      $mins.textContent = pad(mins);
-      $secs.textContent = pad(secs);
-
-      if(days < 3){
-        joinNowBtn.classList.add('blink');
-        joinNowBtn.style.border = '2px solid rgba(212,163,74,0.9)';
-      }
+      if(diff <= 0){ elDays.textContent='00d'; elHours.textContent='00h'; elMins.textContent='00m'; joinNowBtn.textContent='LIVE — JOIN NOW'; return; }
+      const days = Math.floor(diff/(1000*60*60*24));
+      diff -= days*(1000*60*60*24);
+      const hours = Math.floor(diff/(1000*60*60));
+      diff -= hours*(1000*60*60);
+      const mins = Math.floor(diff/(1000*60));
+      elDays.textContent = pad(days)+'d';
+      elHours.textContent = pad(hours)+'h';
+      elMins.textContent = pad(mins)+'m';
+      if(days < 3){ joinNowBtn.classList.add('active-urgent'); }
     }
-
     updateCountdown();
-    const cntInterval = setInterval(updateCountdown, 1000);
+    setInterval(updateCountdown,1000);
 
-    dateChip.addEventListener('click', function(e){
-      const join = document.getElementById('joinSection');
-      if(join){
-        join.scrollIntoView({behavior:'smooth', block:'center'});
-        joinWhatsapp.style.transition = 'transform .2s';
-        joinWhatsapp.style.transform = 'scale(1.06)';
-        setTimeout(()=> joinWhatsapp.style.transform = 'scale(1)', 600);
-      } else {
-        window.location.href = 'https://wa.me/919205681456';
-      }
+    // date chip scroll to join
+    dateChip.addEventListener('click', ()=> {
+      document.getElementById('joinSection').scrollIntoView({behavior:'smooth',block:'center'});
+      joinWhatsapp.style.transform = 'scale(1.06)';
+      setTimeout(()=> joinWhatsapp.style.transform='scale(1)',600);
     });
 
-    setInterval(()=> {
-      const elements = document.querySelectorAll('.btn-cinematic');
-      elements.forEach(el => el.classList.toggle('sweep'));
-    }, 1200);
-
-    dateChip.tabIndex = 0;
-    dateChip.addEventListener('keypress', function(e){
-      if(e.key === 'Enter' || e.key === ' '){
-        e.preventDefault();
-        dateChip.click();
-      }
-    });
-
-    /* === LEAD FORM: Google Apps Script integration === */
+    // Apps Script URL (user provided)
     const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxlOCHiKqc8vBZY_AUWZxmeEuQ13Tv3jNPiZZzV1_kI_FgIWL9ODAZ-ms9wOYM2WaOw4A/exec";
 
-    document.getElementById('leadForm').addEventListener('submit', async function(e) {
+    // Lead form handling
+    document.getElementById('leadForm').addEventListener('submit', async function(e){
       e.preventDefault();
       const name = document.getElementById('lf-name').value.trim();
       const email = document.getElementById('lf-email').value.trim();
       const phone = document.getElementById('lf-phone').value.trim();
       const source = document.getElementById('lf-source').value || 'Landing Page';
-
       const msgEl = document.getElementById('leadMsg');
       const submitBtn = document.getElementById('leadSubmit');
       submitBtn.disabled = true;
       submitBtn.textContent = 'Saving...';
 
       if(!name || !email || !phone){
-        msgEl.style.display = 'block';
-        msgEl.style.background = '#fff3f2';
-        msgEl.style.color = '#b00020';
-        msgEl.innerText = 'Please fill all required fields correctly.';
-        submitBtn.disabled = false;
-        submitBtn.textContent = 'Reserve My Seat';
-        return;
+        msgEl.style.display='block'; msgEl.style.background='#fff3f2'; msgEl.style.color='#b00020';
+        msgEl.innerText='Please fill all required fields correctly.'; submitBtn.disabled=false; submitBtn.textContent='Reserve My Seat'; return;
       }
 
-      const payload = {
-        name: name,
-        email: email,
-        phone: phone,
-        source: source,
-        page: 'Vedic Numerology - 3 Days Masterclass'
-      };
+      const payload = { name, email, phone, source, page:'Vedic Numerology - 3 Days Masterclass' };
 
       try {
         const res = await fetch(SCRIPT_URL, {
-          method: 'POST',
-          mode: 'cors',
-          headers: { 'Content-Type': 'application/json' },
+          method:'POST',
+          mode:'cors',
+          headers:{ 'Content-Type':'application/json' },
           body: JSON.stringify(payload)
         });
         const data = await res.json();
-
-        if (data && data.success) {
-          msgEl.style.display = 'block';
-          msgEl.style.background = '#eafaf1';
-          msgEl.style.color = '#0b6b4a';
-          msgEl.innerHTML = 'Thanks ' + name.split(' ')[0] + '! ✅ Your seat is reserved. We will message you on WhatsApp soon.';
-
-          // If you later add GA4, you can call gaEvent('sign_up', {...}) here.
-
-          setTimeout(() => {
-            document.getElementById('leadForm').reset();
-            msgEl.style.display = 'none';
-          }, 6000);
-
+        if(data && data.success){
+          msgEl.style.display='block'; msgEl.style.background='#eafaf1'; msgEl.style.color='#0b6b4a';
+          msgEl.innerHTML = 'Thanks ' + (name.split(' ')[0]||name) + '! ✅ Your seat is reserved. We will message you on WhatsApp soon.';
+          // auto-open whatsapp (optional): window.open('https://wa.me/919205681456?text=' + encodeURIComponent('I registered: '+name),'_blank');
+          setTimeout(()=>{ document.getElementById('leadForm').reset(); msgEl.style.display='none'; },6000);
         } else {
-          throw new Error((data && data.message) ? data.message : 'Server error');
+          throw new Error((data&&data.message)?data.message:'Server error');
         }
-
-      } catch (err) {
-        msgEl.style.display = 'block';
-        msgEl.style.background = '#fff7e6';
-        msgEl.style.color = '#6b4b00';
-        msgEl.innerText = 'Oops! Unable to save lead. Please try again or contact 9205681456. (' + err.message + ')';
+      } catch(err){
+        msgEl.style.display='block'; msgEl.style.background='#fff7e6'; msgEl.style.color='#6b4b00';
+        msgEl.innerText = 'Oops! Unable to save lead. Please try again or contact 9205681456. (' + (err.message||err) + ')';
       } finally {
-        submitBtn.disabled = false;
-        submitBtn.textContent = 'Reserve My Seat';
+        submitBtn.disabled=false; submitBtn.textContent='Reserve My Seat';
       }
     });
-
-    /* Optional: Track CTA clicks with gaEvent if GA is enabled */
-    const joinWhatsappBtn = document.getElementById('joinWhatsapp');
-    const joinNowBtnEl = document.getElementById('joinNowBtn');
-    const enrollBtn = document.getElementById('enrollBtn');
-
-    if(joinWhatsappBtn){ joinWhatsappBtn.addEventListener('click', ()=>{/* gaEvent('join_click',{method:'whatsapp'}) */}); }
-    if(joinNowBtnEl){ joinNowBtnEl.addEventListener('click', ()=>{/* gaEvent('join_click',{method:'cta'}) */}); }
-    if(enrollBtn){ enrollBtn.addEventListener('click', ()=>{/* gaEvent('payment_click',{method:'payment_link'}) */}); }
 
   </script>
 </body>
