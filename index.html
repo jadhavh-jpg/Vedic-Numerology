@@ -538,62 +538,66 @@
     if(enrollBtn) enrollBtn.addEventListener('click', ()=>console.log('click enroll'));
 
     
- <script>
-(function animatedVisitorCount() {
-  const outEl = document.getElementById('visitorCount');
-  if (!outEl) return;
+<script>
+/* Robust countdown: waits for DOM, finds elements, updates every second */
+(function initCountdown(){
+  function start(){
+    const elDays = document.getElementById('cd-days');
+    const elHours = document.getElementById('cd-hours');
+    const elMins = document.getElementById('cd-mins');
+    const elSecs = document.getElementById('cd-secs');
+    const joinNowBtn = document.getElementById('joinNowBtn');
 
-  const START_OFFSET = 786;       // Display start offset
-  const ANIM_DURATION = 900;      // animation duration in ms
-
-  // helper: animate number from start -> end
-  function animateNumber(from, to, duration, updateFn, doneFn) {
-    const start = performance.now();
-    const diff = to - from;
-    if (diff === 0) { updateFn(to); if (doneFn) doneFn(); return; }
-
-    function easeOutCubic(t) { return 1 - Math.pow(1 - t, 3); }
-
-    function step(now) {
-      const t = Math.min(1, (now - start) / duration);
-      const eased = easeOutCubic(t);
-      const current = Math.round(from + diff * eased);
-      updateFn(current);
-      if (t < 1) requestAnimationFrame(step);
-      else if (doneFn) doneFn();
+    if(!elDays || !elHours || !elMins || !elSecs){
+      console.warn('Countdown elements not found, aborting countdown.');
+      return;
     }
-    requestAnimationFrame(step);
+
+    // Target = 25 Nov 2025 20:00 IST -> UTC 14:30
+    const targetUTC = Date.UTC(2025, 10, 25, 14, 30, 0);
+
+    function pad(n){ return n < 10 ? '0'+n : String(n); }
+
+    function tick(){
+      const now = Date.now();
+      let diff = targetUTC - now;
+      if(diff <= 0){
+        elDays.textContent = '00d';
+        elHours.textContent = '00h';
+        elMins.textContent = '00m';
+        elSecs.textContent = '00s';
+        if(joinNowBtn) joinNowBtn.textContent = 'LIVE — JOIN NOW';
+        return;
+      }
+      const days = Math.floor(diff / (1000*60*60*24));
+      diff -= days * (1000*60*60*24);
+      const hours = Math.floor(diff / (1000*60*60));
+      diff -= hours * (1000*60*60);
+      const mins = Math.floor(diff / (1000*60));
+      diff -= mins * (1000*60);
+      const secs = Math.floor(diff / 1000);
+      elDays.textContent = pad(days) + 'd';
+      elHours.textContent = pad(hours) + 'h';
+      elMins.textContent = pad(mins) + 'm';
+      elSecs.textContent = pad(secs) + 's';
+    }
+
+    tick();
+    setInterval(tick, 1000);
   }
 
-  // Try to fetch and increment the CountAPI key (this increments)
-  fetch("https://api.countapi.xyz/hit/kasturi-divine/visitors")
-    .then(res => {
-      if (!res.ok) throw new Error('Network response not ok: ' + res.status);
-      return res.json();
-    })
-    .then(data => {
-      const real = Number(data && data.value) || 0;
-      const target = real + START_OFFSET;
-
-      // current displayed value (if any) — try to parse existing text, otherwise start from START_OFFSET
-      const currentText = outEl.textContent.replace(/[^\d]/g, '') || '';
-      const currentNum = currentText ? Number(currentText) : START_OFFSET;
-
-      // animate from currentNum -> target
-      animateNumber(currentNum, target, ANIM_DURATION, (val) => {
-        outEl.textContent = val.toLocaleString('en-IN');
-      });
-    })
-    .catch(err => {
-      console.warn('Visitor count error', err);
-      // fallback: show START_OFFSET (no animation)
-      outEl.textContent = START_OFFSET.toString();
-    });
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', start);
+  } else {
+    start();
+  }
 })();
 </script>
 
+
 </body>
 </html>
+
 
 
 
