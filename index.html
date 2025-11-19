@@ -538,9 +538,64 @@
     if(enrollBtn) enrollBtn.addEventListener('click', ()=>console.log('click enroll'));
 
     
+<script>
+/* Robust countdown: waits for DOM, finds elements, updates every second */
+(function initCountdown(){
+  function start(){
+    const elDays = document.getElementById('cd-days');
+    const elHours = document.getElementById('cd-hours');
+    const elMins = document.getElementById('cd-mins');
+    const elSecs = document.getElementById('cd-secs');
+    const joinNowBtn = document.getElementById('joinNowBtn');
+
+    if(!elDays || !elHours || !elMins || !elSecs){
+      console.warn('Countdown elements not found, aborting countdown.');
+      return;
+    }
+
+    const targetUTC = Date.UTC(2025, 10, 25, 14, 30, 0);
+
+    function pad(n){ return n < 10 ? '0'+n : String(n); }
+
+    function tick(){
+      const now = Date.now();
+      let diff = targetUTC - now;
+      if(diff <= 0){
+        elDays.textContent = '00d';
+        elHours.textContent = '00h';
+        elMins.textContent = '00m';
+        elSecs.textContent = '00s';
+        if(joinNowBtn) joinNowBtn.textContent = 'LIVE — JOIN NOW';
+        return;
+      }
+      const days = Math.floor(diff / (1000*60*60*24));
+      diff -= days * (1000*60*60*24);
+      const hours = Math.floor(diff / (1000*60*60));
+      diff -= hours * (1000*60*60);
+      const mins = Math.floor(diff / (1000*60));
+      diff -= mins * (1000*60);
+      const secs = Math.floor(diff / 1000);
+      elDays.textContent = pad(days) + 'd';
+      elHours.textContent = pad(hours) + 'h';
+      elMins.textContent = pad(mins) + 'm';
+      elSecs.textContent = pad(secs) + 's';
+    }
+
+    tick();
+    setInterval(tick, 1000);
+  }
+
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', start);
+  } else {
+    start();
+  }
+})();
+</script>
 
 </body>
 </html>
+
 
 
 
