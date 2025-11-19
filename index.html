@@ -345,23 +345,61 @@
       </aside>
     </div>
 
-    <!-- ===== PAGE-LAST: Countdown & Visitors (these show at the bottom, above footer) ===== -->
-    <section class="last-countdown-block" aria-labelledby="countdownHeading">
-      <div id="countdownHeading" style="font-size:20px;color:var(--accent);font-weight:700;margin-bottom:12px;">Webinar Countdown</div>
+   <script>
+/* Robust countdown: waits for DOM, finds elements, updates every second */
+(function initCountdown(){
+  function start(){
+    const elDays = document.getElementById('cd-days');
+    const elHours = document.getElementById('cd-hours');
+    const elMins = document.getElementById('cd-mins');
+    const elSecs = document.getElementById('cd-secs');
+    const joinNowBtn = document.getElementById('joinNowBtn');
 
-      <div class="countdown-row" aria-hidden="false" role="timer" aria-live="polite">
-        <div class="cd-box" id="cd-days">--d</div>
-        <div class="cd-box" id="cd-hours">--h</div>
-        <div class="cd-box" id="cd-mins">--m</div>
-        <div class="cd-box" id="cd-secs">--s</div>
-      </div>
+    if(!elDays || !elHours || !elMins || !elSecs){
+      console.warn('Countdown elements not found, aborting countdown.');
+      return;
+    }
 
-      <!-- visitors box -->
-      <div class="visitor-box" style="margin-top:18px;">
-        <h3>Page Visitors</h3>
-        <div class="visitor-number" id="visitorCount">786</div>
-        <div style="margin-top:8px;color:var(--muted);font-size:13px">Visitor count shown starting from 786</div>
-      </div>
+    const targetUTC = Date.UTC(2025, 10, 25, 14, 30, 0);
+
+    function pad(n){ return n < 10 ? '0'+n : String(n); }
+
+    function tick(){
+      const now = Date.now();
+      let diff = targetUTC - now;
+      if(diff <= 0){
+        elDays.textContent = '00d';
+        elHours.textContent = '00h';
+        elMins.textContent = '00m';
+        elSecs.textContent = '00s';
+        if(joinNowBtn) joinNowBtn.textContent = 'LIVE — JOIN NOW';
+        return;
+      }
+      const days = Math.floor(diff / (1000*60*60*24));
+      diff -= days * (1000*60*60*24);
+      const hours = Math.floor(diff / (1000*60*60));
+      diff -= hours * (1000*60*60);
+      const mins = Math.floor(diff / (1000*60));
+      diff -= mins * (1000*60);
+      const secs = Math.floor(diff / 1000);
+      elDays.textContent = pad(days) + 'd';
+      elHours.textContent = pad(hours) + 'h';
+      elMins.textContent = pad(mins) + 'm';
+      elSecs.textContent = pad(secs) + 's';
+    }
+
+    tick();
+    setInterval(tick, 1000);
+  }
+
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', start);
+  } else {
+    start();
+  }
+})();
+</script>
+
     </section>
 
     <footer>© Kasturi Divine — All Rights Reserved</footer>
@@ -369,6 +407,7 @@
 
  
    
+
 
 
 
