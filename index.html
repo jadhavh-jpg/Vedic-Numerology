@@ -7,18 +7,6 @@
 
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-  <!-- Optional GA4 (paste your Measurement ID if you want) -->
-  <!--
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-XXXXXXXXXX', { send_page_view: true });
-    function gaEvent(name, params = {}) { try { gtag('event', name, params); } catch(e){} }
-  </script>
-  -->
-
   <style>
     :root{
       --bg1: #f6efe2;
@@ -40,14 +28,12 @@
     .subtitle{color:#143a35;font-weight:600;margin-bottom:8px}
     .meta{color:var(--muted);font-size:14px}
 
-    /* hero grid */
     .hero{display:grid;grid-template-columns:1fr 380px;gap:24px;margin-top:18px;align-items:start}
     .left-col{display:flex;flex-direction:column;gap:18px}
     .card{background:var(--card);padding:16px;border-radius:14px;box-shadow:var(--shadow)}
     .video-frame{width:100%;height:320px;border-radius:10px;overflow:hidden;background:#000}
     .join-row{display:flex;gap:12px;margin-top:12px;flex-wrap:wrap}
 
-    /* form */
     form{display:grid;grid-template-columns:1fr 1fr;gap:10px}
     input, select{padding:12px;border-radius:10px;border:1px solid #eee;background:rgba(12,60,52,0.03)}
     .form-actions{display:flex;gap:10px;align-items:center}
@@ -56,35 +42,29 @@
     .btn-ghost{background:transparent;border:2px solid rgba(15,89,77,0.08);color:var(--accent)}
     .btn-join{background:#25D366;color:#fff;border-radius:10px;padding:12px 16px;font-weight:700}
 
-    /* mentors */
     .mentors{display:flex;flex-direction:column;gap:12px}
     .mentor{display:flex;gap:12px;align-items:center}
     .mentor img{width:98px;height:98px;object-fit:cover;border-radius:999px;border:5px solid #efe2cf}
     .mentor h4{margin:0;color:#0d473f}
     .mentor p{margin:4px 0 0;color:var(--muted);font-size:13px}
 
-    /* two-column why/learn */
     .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
     .list{list-style:none;padding:0;margin:0;color:var(--muted);line-height:1.6}
     .list li{padding-left:18px;position:relative}
     .list li::before{content:"✔";position:absolute;left:0;color:var(--accent);font-weight:800}
 
-    /* testimonials */
     .testimonials{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:12px}
     .tcard{padding:14px;border-radius:10px;background:linear-gradient(180deg,#fff,#fffef9);box-shadow:var(--shadow)}
 
-    /* utility */
     .section-title{display:flex;align-items:center;gap:12px}
     .section-title h3{margin:0;color:var(--accent)}
 
-    /* date-chip */
     .date-chip{position:fixed;right:18px;top:18px;background:linear-gradient(90deg,var(--gold1),var(--gold2));color:#072a20;padding:10px 12px;border-radius:999px;font-weight:800;box-shadow:0 8px 26px rgba(212,163,74,0.18);cursor:pointer;display:flex;align-items:center;gap:8px;z-index:999}
     .date-chip .ping{width:10px;height:10px;border-radius:999px;background:#fff;box-shadow:0 0 18px rgba(255,215,120,0.8);animation: ping 1.8s infinite}
     @keyframes ping {0%{transform:scale(.9);opacity:1}50%{transform:scale(1.25);opacity:.7}100%{transform:scale(.9);opacity:1}}
 
     footer{margin-top:28px;padding:12px;color:var(--muted);text-align:center;font-size:13px}
 
-    /* responsive adjustments */
     @media (max-width:980px){
       .hero{grid-template-columns:1fr;gap:16px}
       .video-frame{height:220px}
@@ -106,15 +86,13 @@
 </head>
 <body>
   <div class="wrap">
-    <!-- fixed date chip -->
     <div class="date-chip" id="dateChip" title="Click to jump to JOIN">
       <div class="ping"></div>
       <div>25 Nov</div>
     </div>
 
-    <!-- header -->
     <div class="topbar">
-      <div class="logo"><img src="logo.png" alt="Kasturi Divine" style="height:100%;width:100%;object-fit:contain"></div>
+      <div class="logo"><img src="assets/logo.png" alt="Kasturi Divine" style="height:100%;width:100%;object-fit:contain"></div>
       <div>
         <div class="kicker">LIVE FREE WEBINAR</div>
         <h1>3 DAYS Master Class on Vedic Numerology</h1>
@@ -123,10 +101,8 @@
       </div>
     </div>
 
-    <!-- hero -->
     <div class="hero" id="topHero">
       <div class="left-col">
-        <!-- intro video -->
         <div class="card">
           <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
             <div><strong style="color:var(--accent)">Intro Video</strong><div style="font-size:13px;color:var(--muted)">Watch to know what's inside</div></div>
@@ -153,7 +129,6 @@
           </div>
         </div>
 
-        <!-- registration form -->
         <div class="card" id="leadFormCard">
           <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
             <div class="section-title"><h3>Register for FREE Masterclass</h3></div>
@@ -180,7 +155,6 @@
           </form>
         </div>
 
-        <!-- Why attend & What you'll learn -->
         <div style="display:flex;flex-direction:column;gap:12px">
           <div class="grid-2">
             <div class="card">
@@ -203,7 +177,6 @@
             </div>
           </div>
 
-          <!-- Testimonials -->
           <div>
             <div class="section-title" style="margin-bottom:8px"><h3>Testimonials</h3></div>
             <div class="testimonials">
@@ -216,23 +189,20 @@
 
       </div>
 
-      <!-- RIGHT COLUMN: Mentors, Contact -->
       <aside class="card" style="padding:18px">
         <div style="margin-bottom:6px" class="section-title"><h3>Meet Your Mentors</h3></div>
 
-        <!-- Dr Santoshh Jakhar (MAIN, on top) -->
         <div class="mentors">
           <div class="mentor" id="mentor-dr">
-            <img src="DR.jpeg" alt="Dr Santoshh Jakhar">
+            <img src="assets/mentor2.jpg" alt="Dr Santoshh Jakhar">
             <div>
               <h4>Dr. Santoshh Jakhar</h4>
               <p>Wellness Coach — Mind-body alignment through numerology, wellness guidance and mentoring. (Lead Mentor)</p>
             </div>
           </div>
 
-          <!-- Mrs Neitu below -->
           <div class="mentor" id="mentor-neitu" style="margin-top:12px">
-            <img src="popoip.jpg" alt="Mrs Neitu Choudhary">
+            <img src="assets/mentor1.jpg" alt="Mrs Neitu Choudhary">
             <div>
               <h4>Mrs. Neitu Choudhary</h4>
               <p>Numero & Astro Coach — Professional numerology consultant with years of experience. Practical live examples and name-correction expertise.</p>
@@ -299,10 +269,57 @@
       setTimeout(()=> joinWhatsapp.style.transform='scale(1)',600);
     });
 
-    // Apps Script URL (user provided)
+    // ===== UTM autofill for "Source" field (uses utm_source / source query param or referrer) =====
+    (function utmAutofill() {
+      try {
+        const params = new URLSearchParams(window.location.search || '');
+        const utm = (params.get('utm_source') || params.get('source') || '').trim();
+        const sel = document.getElementById('lf-source');
+        if(!sel) return;
+
+        if (utm) {
+          const normalized = utm.toLowerCase();
+          if(normalized.includes('facebook')) sel.value = 'Facebook';
+          else if(normalized.includes('instagram')) sel.value = 'Instagram';
+          else if(normalized.includes('referral')) sel.value = 'Referral';
+          else {
+            // add option dynamically if not present
+            let opt = Array.from(sel.options).find(o => o.value.toLowerCase() === normalized);
+            if(!opt){
+              const newOpt = document.createElement('option');
+              newOpt.value = utm;
+              newOpt.textContent = utm;
+              sel.appendChild(newOpt);
+              sel.value = utm;
+            } else {
+              sel.value = opt.value;
+            }
+          }
+          console.log('UTM autofill set source =', sel.value);
+          return;
+        }
+
+        // fallback to document.referrer mapping
+        if (document.referrer) {
+          try {
+            const r = new URL(document.referrer);
+            const host = r.hostname.toLowerCase();
+            if (host.includes('facebook.com')) sel.value = 'Facebook';
+            else if (host.includes('instagram.com')) sel.value = 'Instagram';
+            else sel.value = 'Referral';
+            console.log('Referrer autofill set source =', sel.value, 'from', host);
+          } catch(e){}
+        } else {
+          sel.value = 'Landing Page';
+        }
+      } catch(e){
+        console.warn('UTM autofill error', e);
+      }
+    })();
+
+    // ===== Debug-enabled submit (detailed logging + friendly UI messaging) =====
     const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxlOCHiKqc8vBZY_AUWZxmeEuQ13Tv3jNPiZZzV1_kI_FgIWL9ODAZ-ms9wOYM2WaOw4A/exec";
 
-    // Lead form handling
     document.getElementById('leadForm').addEventListener('submit', async function(e){
       e.preventDefault();
       const name = document.getElementById('lf-name').value.trim();
@@ -311,6 +328,7 @@
       const source = document.getElementById('lf-source').value || 'Landing Page';
       const msgEl = document.getElementById('leadMsg');
       const submitBtn = document.getElementById('leadSubmit');
+
       submitBtn.disabled = true;
       submitBtn.textContent = 'Saving...';
 
@@ -322,30 +340,53 @@
       const payload = { name, email, phone, source, page:'Vedic Numerology - 3 Days Masterclass' };
 
       try {
+        // DEBUG: log payload
+        console.log('[LeadSubmit] payload:', payload);
+
         const res = await fetch(SCRIPT_URL, {
           method:'POST',
           mode:'cors',
           headers:{ 'Content-Type':'application/json' },
           body: JSON.stringify(payload)
         });
-        const data = await res.json();
-        if(data && data.success){
+
+        // Read raw response text for debugging
+        const rawText = await res.text();
+        console.log('[LeadSubmit] fetch status:', res.status);
+        console.log('[LeadSubmit] raw response:', rawText);
+
+        let data = null;
+        try { data = JSON.parse(rawText); } catch(err){ console.warn('Response not JSON', err); }
+
+        if (res.ok && data && data.success) {
+          // success
           msgEl.style.display='block'; msgEl.style.background='#eafaf1'; msgEl.style.color='#0b6b4a';
           msgEl.innerHTML = 'Thanks ' + (name.split(' ')[0]||name) + '! ✅ Your seat is reserved. We will message you on WhatsApp soon.';
-          // auto-open whatsapp (optional): window.open('https://wa.me/919205681456?text=' + encodeURIComponent('I registered: '+name),'_blank');
+          console.log('[LeadSubmit] success saved to Sheet');
           setTimeout(()=>{ document.getElementById('leadForm').reset(); msgEl.style.display='none'; },6000);
         } else {
-          throw new Error((data&&data.message)?data.message:'Server error');
+          // build helpful error message
+          const serverMsg = (data && data.message) ? data.message : (rawText ? rawText : 'Unknown server response');
+          throw new Error('Server response: ' + serverMsg + ' (HTTP ' + res.status + ')');
         }
+
       } catch(err){
+        console.error('[LeadSubmit] ERROR', err);
         msgEl.style.display='block'; msgEl.style.background='#fff7e6'; msgEl.style.color='#6b4b00';
-        msgEl.innerText = 'Oops! Unable to save lead. Please try again or contact 9205681456. (' + (err.message||err) + ')';
+        msgEl.innerText = 'Oops! Unable to save lead. Please try again or contact 9205681456. (Debug: ' + (err.message || err) + ')';
       } finally {
         submitBtn.disabled=false; submitBtn.textContent='Reserve My Seat';
       }
     });
 
+    // small CTA click hooks (kept for GA later)
+    const joinWhatsappBtn = document.getElementById('joinWhatsapp');
+    const joinNowBtnEl = document.getElementById('joinNowBtn');
+    const enrollBtn = document.getElementById('enrollBtn');
+    if(joinWhatsappBtn) joinWhatsappBtn.addEventListener('click', ()=>console.log('click joinWhatsapp'));
+    if(joinNowBtnEl) joinNowBtnEl.addEventListener('click', ()=>console.log('click joinNow'));
+    if(enrollBtn) enrollBtn.addEventListener('click', ()=>console.log('click enroll'));
+
   </script>
 </body>
 </html>
-
