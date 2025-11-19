@@ -538,34 +538,63 @@
     if(enrollBtn) enrollBtn.addEventListener('click', ()=>console.log('click enroll'));
 
     
-   (function visitorCount() {
+ <script>
+(function animatedVisitorCount() {
   const outEl = document.getElementById('visitorCount');
-  if(!outEl) return;
+  if (!outEl) return;
 
-  // LIVE increment counter
+  const START_OFFSET = 786;       // Display start offset
+  const ANIM_DURATION = 900;      // animation duration in ms
+
+  // helper: animate number from start -> end
+  function animateNumber(from, to, duration, updateFn, doneFn) {
+    const start = performance.now();
+    const diff = to - from;
+    if (diff === 0) { updateFn(to); if (doneFn) doneFn(); return; }
+
+    function easeOutCubic(t) { return 1 - Math.pow(1 - t, 3); }
+
+    function step(now) {
+      const t = Math.min(1, (now - start) / duration);
+      const eased = easeOutCubic(t);
+      const current = Math.round(from + diff * eased);
+      updateFn(current);
+      if (t < 1) requestAnimationFrame(step);
+      else if (doneFn) doneFn();
+    }
+    requestAnimationFrame(step);
+  }
+
+  // Try to fetch and increment the CountAPI key (this increments)
   fetch("https://api.countapi.xyz/hit/kasturi-divine/visitors")
-    .then(r => r.json())
+    .then(res => {
+      if (!res.ok) throw new Error('Network response not ok: ' + res.status);
+      return res.json();
+    })
     .then(data => {
-      const real = Number(data.value) || 0;
+      const real = Number(data && data.value) || 0;
+      const target = real + START_OFFSET;
 
-      // STARTING COUNT = 786
-      const displayCount = real + 786;
+      // current displayed value (if any) — try to parse existing text, otherwise start from START_OFFSET
+      const currentText = outEl.textContent.replace(/[^\d]/g, '') || '';
+      const currentNum = currentText ? Number(currentText) : START_OFFSET;
 
-      outEl.textContent = displayCount.toLocaleString('en-IN');
+      // animate from currentNum -> target
+      animateNumber(currentNum, target, ANIM_DURATION, (val) => {
+        outEl.textContent = val.toLocaleString('en-IN');
+      });
     })
     .catch(err => {
       console.warn('Visitor count error', err);
-      // fallback default
-      outEl.textContent = "786";
+      // fallback: show START_OFFSET (no animation)
+      outEl.textContent = START_OFFSET.toString();
     });
 })();
+</script>
 
-        });
-    })();
-
-  </script>
 </body>
 </html>
+
 
 
 
