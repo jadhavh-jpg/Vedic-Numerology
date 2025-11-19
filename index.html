@@ -537,30 +537,36 @@
     if(joinNowBtnEl) joinNowBtnEl.addEventListener('click', ()=>console.log('click joinNow'));
     if(enrollBtn) enrollBtn.addEventListener('click', ()=>console.log('click enroll'));
 
-    // ===== Visitor counter using CountAPI (display starts from 786) =====
-    (function visitorCount() {
-      const outEl = document.getElementById('visitorCount');
-      if(!outEl) return;
+    
+   (function visitorCount() {
+  const outEl = document.getElementById('visitorCount');
+  if(!outEl) return;
 
-      // Hit the namespace/key (this increments). If you prefer non-incrementing read,
-      // use "https://api.countapi.xyz/get/namespace/key" instead.
-      fetch("https://api.countapi.xyz/hit/kasturi-divine/visitors")
-        .then(r => r.json())
-        .then(data => {
-          // data.value is real counter from countapi; display offset by 786
-          const real = Number(data.value) || 0;
-          const displayCount = real + 786;
-          outEl.textContent = displayCount.toLocaleString('en-IN');
-        })
-        .catch(err => {
-          console.warn('Visitor count error', err);
-          outEl.textContent = "786";
+  // LIVE increment counter
+  fetch("https://api.countapi.xyz/hit/kasturi-divine/visitors")
+    .then(r => r.json())
+    .then(data => {
+      const real = Number(data.value) || 0;
+
+      // STARTING COUNT = 786
+      const displayCount = real + 786;
+
+      outEl.textContent = displayCount.toLocaleString('en-IN');
+    })
+    .catch(err => {
+      console.warn('Visitor count error', err);
+      // fallback default
+      outEl.textContent = "786";
+    });
+})();
+
         });
     })();
 
   </script>
 </body>
 </html>
+
 
 
 
